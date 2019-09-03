@@ -21,3 +21,6 @@
  * On the other hand, Our project will predict the emotions such as happy, angry, surprised, neutral and sad.
  
  ## Scope and Stake holders :-
+  * Any customer service company can use this product to gather the opinions of their customers and to do the analysis based on this data
+  * This will help them to improve the quality of service or product considering the needs of customers and to reach maximux customer satisfaction
+  * Stake holders will be the Developers, companies and their customers
