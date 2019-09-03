@@ -18,3 +18,6 @@
  * It recognizes nearly 120 languages and variants
  * Moreover interface asks about speaker diarization which is still in the BETA version. User needs to give number of speakers which are involved in converstion
  * Currently this is state of art product in the field of Speech Sentiment Analysis
+ * On the other hand, Our project will predict the emotions such as happy, angry, surprised, neutral and sad.
+ 
+ ## Scope and Stake holders :-
