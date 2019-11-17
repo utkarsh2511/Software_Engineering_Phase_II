@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Software Requirements Specification</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <style>
+    /* Customization of standard HTML styles */
+    p {
+      margin-top: 0em;
+      margin-bottom: 0.5em;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 0em;
+      margin-bottom: 0.25em;
+    }
+    table {
+      border-spacing: 1em;
+    }
+    th, td {
+      text-align: left;
+    }
+
+    /* Customization of ReqView styles */
+    #heading {
+      margin: 1em;
+      margin-top: 2em;
+    }
+    #filter {
+      text-align: right;
+      margin: 1em;
+    }
+    #reqviewTable {
+      margin: 1em;
+    }
+    #reqviewTable h1 {
+      font-size: 30px;
+    }
+    #reqviewTable h2 {
+      font-size: 24px;
+    }
+    #reqviewTable h3 {
+      font-size: 20px;
+    }
+    #reqviewTable h4 {
+      font-size: 18px;
+    }
+    #reqviewTable h5 {
+      font-size: 16px;
+    }
+    #reqviewTable h6 {
+      font-size: 14px;
+    }
+    /* Customization of our styles */
+    .id-col {
+      min-width: 5em;
+      width: 10%;
+      vertical-align: top;
+    }
+    .description-col {
+      min-width: 30em;
+      width: 40%;
+      vertical-align: top;
+    }
+    .discussion-col {
+      min-width: 15em;
+      width: 20%;
+      vertical-align: top;
+    }
+    .links-col {
+      min-width: 15em;
+      width: 20%;
+      vertical-align: top;
+    }
+    .attributes-col {
+      min-width: 15em;
+      width: 30%;
+      vertical-align: top;
+    }
+    .attributes-col ul {
+      padding-left: 0px;
+    }
+    .attributes-col li {
+      list-style: none outside none;
+    }
+    .attributes-col .attribute-name {
+      font-style: italic;
+    }
+    .custom-col {
+      min-width: 15em;
+      width: 20%;
+      vertical-align: top;
+    }
+    .comment {
+      font-size: 0.9em;
+    }
+    .comment-text {
+      padding-top: 5px;
+      padding-bottom: 10px;
+    }
+    .attachment {
+      font-style: italic;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+    }
+    .links-type-name {
+      font-style: italic;
+    }
+    .link {
+      margin-left: 16px;
+      font-size: 0.9em;
+    }
+    td.attributes-col div.htmlContent,
+    td.custom-col div.htmlContent {
+      min-width: 15em;
+    }
+    .deleted {
+      color: #666;
+    }
+    .deleted .id-col,
+    .deleted .description-col,
+    .link.deleted {
+      text-decoration: line-through;
+    }
+    .deleted a {
+      color: gray;
+    }
+    .htmlContent table {
+      border: 1px solid black;
+      border-collapse: collapse;
+      width: auto;
+    }
+    .htmlContent th, .htmlContent td {
+      border: 1px solid #b5bcc7;
+      vertical-align: top;
+      padding: 3px 7px 2px 7px;
+    }
+    .htmlContent th {
+      padding-top: 5px;
+      padding-bottom: 4px;
+      background: silver;
+    }
+  </style>
+</head>
+<body>
+  <div id="heading">
+    <h1>Software Requirements Specification</h1>
+  </div>
+  <div id="reqviewTable">
+    <table id="reqsTable" class="table">
+      <!-- Heading of the requirements table -->
+      <thead>
+        <tr>
+          <th class="id-col"><i class="fas fas fa-asterisk"></i> ID</th>
+          <th class="custom-col"><i class="fas fa-cog"></i> Type</th>
+          <th class="description-col"><i class="fas fa-align-left"></i> Description</th>
+          <th class="custom-col"><i class="fas fa-cog"></i> Source</th>
+          <th class="custom-col"><i class="fas fa-cog"></i> Rationale</th>
+          <th class="custom-col"><i class="fas fa-cog"></i> Priority</th>
+          <th class="custom-col"><i class="fas fa-cog"></i> Status</th>
+          <th class="custom-col"><i class="fas fa-cog"></i> Ver. Method</th>
+        </tr>
+      </thead>
+
+      <!-- Requirements table with list of requirements -->
+      <tbody>
+        <tr>
+          <td class="id-col"><a id="1"></a>SRS-1</td>
+          <td class="custom-col">Information</td>
+                      <td class="description-col" style="padding-left:10px">
+            <h1>1 Introduction</h1>
+            <div class="htmlContent"></div>
+          </td>
+          <td class="custom-col">IEEE</td>
+                      <td class="custom-col"></td>
+                      <td class="custom-col">Low</td>
+                      <td class="custom-col">Draft</td>
+                      <td class="custom-col">Demonstration</td>
+                    </tr>
+        <tr>
+          <td class="id-col"><a id="2"></a>SRS-2</td>
+          <td class="custom-col">Information</td>
+                      <td class="description-col" style="padding-left:20px">
+            <h2>1.1 Purpose</h2>
+            <div class="htmlContent"><p>Identity theft and phishing are the common dangers of online shopping. Secure Socket Layer (SSL) encryption prevents the interception of consumer information in transit between the consumer and the online merchant. However, one must still trust merchant and its employees not to use consumer information for their own purchases and not to sell the information to others.</p><p><br></p><p>We hereby propose a new method, that uses steganography (text based) and visual cryptography, which minimizes information sharing between consumer and online merchant but enable successful fund transfer from consumer’s account to merchant’s account thereby safeguarding consumer information and preventing misuse of information at merchant side.</p></div>
+          </td>
+          <td class="custom-col">IEEE</td>
+                      <td class="custom-col"></td>
+                      <td class="custom-col">Low</td>
+                      <td class="custom-col">Draft</td>
+                      <td class="custom-col">Demonstration</td>
+                    </tr>
+        <tr>
+          <td class="id-col"><a id="3"></a>SRS-3</td>
+          <td class="custom-col">Information</td>
+                      <td class="description-col" style="padding-left:20px">
+            <h2>1.2 Scope</h2>
+            <div class="htmlContent"><ol><li><strong>Product Name</strong> – ONLINE PAYMENT SYSTEM USING STEGANOGRAPHY AND VISUAL CRYPTOGRAPHY.</li></ol><p><br></p><ol><li><strong>Purpose</strong> – Improve the existing E-Commerce &amp; online shopping retailer's application security</li></ol><p><br></p><ol><li><strong>Objective </strong>– Using steganography (text based) and visual cryptography, which minimizes information sharing between consumer and online merchant but enable successful fund transfer from consumer’s account to merchant’s account thereby safeguarding consumer information and preventing misuse of information at merchant side. The method proposed is specifically for E-Commerce but can easily be extended for online as well as physical banking</li></ol><p><strong> </strong></p><p><strong> &nbsp;</strong>4<strong>. &nbsp;Goals </strong>–</p><ol><li>Providing limited information which is necessary for fund transfer during online shopping</li><li>Safeguarding customer data and increasing customer confidence and preventing identity theft</li><li>Maintain reusability while designing the software</li><li>Convince the government agencies to use our software.</li></ol></div>
+          </td>
+          <td class="custom-col">IEEE</td>
+                      <td class="custom-col"></td>
+                      <td class="custom-col">Medium</td>
+                      <td class="custom-col">Draft</td>
+                      <td class="custom-col">Demonstration</td>
+                    </tr>
+        <tr>
+          <td class="id-col"><a id="4"></a>SRS-4</td>
+          <td class="custom-col">Information</td>
+                      <td class="description-col" style="padding-left:20px">
+            <h2>1.3 Product perspective</h2>
+            <div class="htmlContent"><p>A rapid growth in E-Commerce market is seen in recent time throughout the world. With ever increasing popularity of online shopping, Debit or Credit card fraud and personal information security are major concerns for customers, merchants and banks specifically in the case of CNP (Card Not Present). This paper presents a new approach for providing limited information only that is necessary for fund transfer during online shopping thereby safeguarding customer data and increasing customer confidence and preventing identity theft. The method uses combined application of steganography and visual cryptography for this purpose.</p></div>
+          </td>
+          <td class="custom-col">IEEE</td>
+                      <td class="custom-col"></td>
+                      <td class="custom-col">Low</td>
+                      <td class="custom-col">Draft</td>
+                      <td class="custom-col">Demonstration</td>
+                    </tr>
+        <tr>
+          <td class="id-col"><a id="5"></a>SRS-5</td>
+          <td class="custom-col">Interface Requirement</td>
+                      <td class="description-col" style="padding-left:30px">
+            <h3>1.3.1 System interfaces</h3>
+            <div class="htmlContent"><p>Web Application runs on various operating systems supporting modules of various frameworks.</p></div>
+          </td>
+          <td class="custom-col">IEEE</td>
+                      <td class="custom-col"></td>
+                      <td class="custom-col">Low</td>
+                      <td class="custom-col">Draft</td>
+                      <td class="custom-col">Demonstration</td>
+                    </tr>
+        <tr>
+          <td class="id-col"><a id="6"></a>SRS-6</td>
+          <td class="custom-col">Interface Requirement</td>
+                      <td class="description-col" style="padding-left:30px">
+            <h3>1.3.2 User interfaces</h3>
+            <div class="htmlContent"><p>Steps Involved in the Online Shopping of Consumer:</p><ul><li>Creation of Shares</li><li>Registration with the merchants’ site</li><li>Selecting item on merchant’s website</li><li>Redirection to payment gateway (CA)</li><li>Insertion of share key</li><li>Successful Payment Message to consumer</li></ul></div>
+          </td>
+          <td class="custom-col">IEEE</td>
+                      <td class="custom-col"></td>
+                      <td class="custom-col">Medium</td>
+                      <td class="custom-col">Draft</td>
+                      <td class="custom-col">Demonstration</td>
+                    </tr>
+        <tr>
+          <td class="id-col"><a id="7"></a>SRS-7</td>
+          <td class="custom-col">Interface Requirement</td>
+                      <td class="description-col" style="padding-left:30px">
+            <h3>1.3.3 Hardware interfaces</h3>
+            <div class="htmlContent"><p>Supported Devices – Personal Computers, Laptops, Digital Platform where online shopping takes place often</p></div>
+          </td>
+          <td class="custom-col">IEEE</td>
+                      <td class="custom-col"></td>
+                      <td class="custom-col">Medium</td>
+                      <td class="custom-col">Draft</td>
+                      <td class="custom-col">Demonstration</td>
+                    </tr>
+        <tr>
+          <td class="id-col"><a id="8"></a>SRS-8</td>
+          <td class="custom-col">Interface Requirement</td>
+                      <td class="description-col" style="padding-left:30px">
+            <h3>1.3.4 Software interfaces</h3>
+            <div class="htmlContent"><ul><li>Operating Systems – Ubuntu 18.04 and higher</li><li>Database Used – MySQL</li><li>Modules Required – Flask’s MySQLdb, Opencv or PIL, AES, SHA</li><li>Web Based Functionality co-ordinated with Python 3 using Flask Framework</li></ul></div>
+          </td>
+          <td class="custom-col">IEEE</td>
+                      <td class="custom-col"></td>
+                      <td class="custom-col">High</td>
+                      <td class="custom-col">Draft</td>
+                      <td class="custom-col">Demonstration</td>
+                    </tr>
+        <tr>
+          <td class="id-col"><a id="9"></a>SRS-9</td>
+          <td class="custom-col">Interface Requirement</td>
+                      <td class="description-col" style="padding-left:30px">
+            <h3>1.3.5 Communications interfaces</h3>
+            <div class="htmlContent"><ul><li>High Level Use of HTTP protocol</li><li>Socket Size (Bandwidth) for 8192 Bytes for receiving and sending data (minimum requirement)</li></ul></div>
+          </td>
+          <td class="custom-col">IEEE</td>
+                      <td class="custom-col"></td>
+                      <td class="custom-col">High</td>
+                      <td class="custom-col">Draft</td>
+                      <td class="custom-col">Demonstration</td>
+                    </tr>
+        <tr>
+          <td class="id-col"><a id="10"></a>SRS-10</td>
+          <td class="custom-col">Non-func. Requirement</td>
+                      <td class="description-col" style="padding-left:30px">
+            <h3>1.3.6 Memory constraints</h3>
+            <div class="htmlContent"><p>Web application needs some amount of database to store shares of particular consumer. So memory allocated must be dynamic and flexible to grow</p></div>
+          </td>
+          <td class="custom-col">IEEE</td>
+                      <td class="custom-col"></td>
+                      <td class="custom-col">High</td>
+                      <td class="custom-col">Draft</td>
+                      <td class="custom-col">Demonstration</td>
+                    </tr>
+        <tr>
+          <td class="id-col"><a id="11"></a>SRS-11</td>
+          <td class="custom-col">Information</td>
+                      <td class="description-col" style="padding-left:30px">
+            <h3>1.3.7 Operations</h3>
+            <div class="htmlContent"><ol><li>This software is designed to work on Ubuntu operating system with version 18.04 or higher.</li><li>The software is developed in python 3 language.</li><li>The software doesn’t interfere with any other running process</li></ol></div>
+          </td>
+          <td class="custom-col">IEEE</td>
+                      <td class="custom-col"></td>
+                      <td class="custom-col">Medium</td>
+                      <td class="custom-col">Draft</td>
+                      <td class="custom-col">Demonstration</td>
+                    </tr>
+        <tr>
+          <td class="id-col"><a id="12"></a>SRS-12</td>
+          <td class="custom-col">Section</td>
+                      <td class="description-col" style="padding-left:30px">
+            <h3>1.3.8 Site adaptation requirements</h3>
+            <div class="htmlContent"><p>TBD</p></div>
+          </td>
+          <td class="custom-col">IEEE</td>
+                      <td class="custom-col"></td>
+                      <td class="custom-col">Low</td>
+                      <td class="custom-col">Draft</td>
+                      <td class="custom-col">Demonstration</td>
+                    </tr>
+        <tr>
+          <td class="id-col"><a id="13"></a>SRS-13</td>
+          <td class="custom-col">Section</td>
+                      <td class="description-col" style="padding-left:30px">
+            <h3>1.3.9 Interfaces with  services</h3>
+            <div class="htmlContent"><p>CA like Payment Gateways</p></div>
+          </td>
+          <td class="custom-col">IEEE</td>
+                      <td class="custom-col"></td>
+                      <td class="custom-col">Low</td>
+                      <td class="custom-col">Draft</td>
+                      <td class="custom-col">Demonstration</td>
+                    </tr>
+        <tr>
+          <td class="id-col"><a id="14"></a>SRS-14</td>
+          <td class="custom-col">Functional Requirement</td>
+                      <td class="description-col" style="padding-left:20px">
+            <h2>1.4 Product functions</h2>
+            <div class="htmlContent"><ul><li>Steganography using ASCII code:- Hiding message using Text Steganography Technique<ol><li>Input Encoding --&gt; Encoding secret message with cover text</li><li>Decoding --&gt; Decoding/recovering the secret message</li></ol></li></ul><p><br></p><ul><li>Visual Cryptography :- Encrypting and Decrypting secret message image<ol><li>Encryption --&gt; Dividing secret message into sufficient no. of shares</li><li>Decryption --&gt; stacking all the shares to retrieve secret image</li></ol></li></ul></div>
+          </td>
+          <td class="custom-col">IEEE</td>
+                      <td class="custom-col"></td>
+                      <td class="custom-col">High</td>
+                      <td class="custom-col">Draft</td>
+                      <td class="custom-col">Demonstration</td>
+                    </tr>
+        <tr>
+          <td class="id-col"><a id="15"></a>SRS-15</td>
+          <td class="custom-col">Non-func. Requirement</td>
+                      <td class="description-col" style="padding-left:20px">
+            <h2>1.5 User  characteristics</h2>
+            <div class="htmlContent"><ul><li>Consumers -- Who want to keep their data safe can enforce this methodology on merchants in online shopping industry.</li></ul><p><br></p><ul><li>Merchants -- Here the Customers are merchants who want to take consumers into confidence of providing security of data.</li></ul><p><br></p><ul><li>Banks – Governing the addressed system of dual encryption</li></ul><p><br></p><ul><li>Middle Authorities – like payment gateways</li></ul><p><br></p><ul><li>Government of a country or state which can ask for merchants and consumers support for using this methodology.</li></ul></div>
+          </td>
+          <td class="custom-col">IEEE</td>
+                      <td class="custom-col"></td>
+                      <td class="custom-col">High</td>
+                      <td class="custom-col">Draft</td>
+                      <td class="custom-col">Demonstration</td>
+                    </tr>
+        <tr>
+          <td class="id-col"><a id="16"></a>SRS-16</td>
+          <td class="custom-col">Information</td>
+                      <td class="description-col" style="padding-left:20px">
+            <h2>1.6 Limitations</h2>
+            <div class="htmlContent"><ul><li>Size of text generated after encryption using steganography may result into space consumption but it gives better standards of encryption.</li><li>It is the responsibility of consumer to keep the shares of encrypted image safe.</li></ul></div>
+          </td>
+          <td class="custom-col">IEEE</td>
+                      <td class="custom-col"></td>
+                      <td class="custom-col">Low</td>
+                      <td class="custom-col">Draft</td>
+                      <td class="custom-col">Demonstration</td>
+                    </tr>
+        <tr>
+          <td class="id-col"><a id="17"></a>SRS-17</td>
+          <td class="custom-col">Non-func. Requirement</td>
+                      <td class="description-col" style="padding-left:20px">
+            <h2>1.7 Assumptions and dependencies</h2>
+            <div class="htmlContent"><ol><li>Required Modules (will be identified in the later versions) are to be installed inside the system.</li><li>Hardware of user’s PC alongside user’s default browser are compatible with AES 256, SHA 256.3)</li><li>User has Ubuntu 18.04 or higher operating system.</li><li>User has python3 installed.</li></ol></div>
+          </td>
+          <td class="custom-col">IEEE</td>
+                      <td class="custom-col"></td>
+                      <td class="custom-col">Low</td>
+                      <td class="custom-col">Draft</td>
+                      <td class="custom-col">Demonstration</td>
+                    </tr>
+        <tr>
+          <td class="id-col"><a id="18"></a>SRS-18</td>
+          <td class="custom-col">Section</td>
+                      <td class="description-col" style="padding-left:20px">
+            <h2>1.8 Definitions</h2>
+            <div class="htmlContent"><ul><li>Visual Cryptography- Cryptographic technique which allows visual information to be encrypted in such a way that decrypted information appears as visual image.</li><li>Encryption – Hiding the information using cryptography</li><li>Decryption – Retrieving the original information back.</li><li>Cryptography – The art of writing or solving codes.</li><li>AES – Advanced encryption standard</li></ul></div>
+          </td>
+          <td class="custom-col">IEEE</td>
+                      <td class="custom-col"></td>
+                      <td class="custom-col">Low</td>
+                      <td class="custom-col">Draft</td>
+                      <td class="custom-col">Demonstration</td>
+                    </tr>
+        <tr>
+          <td class="id-col"><a id="19"></a>SRS-19</td>
+          <td class="custom-col">Section</td>
+                      <td class="description-col" style="padding-left:20px">
+            <h2>1.9 Acronyms and abbreviations</h2>
+            <div class="htmlContent"><ul><li>VC -- Visual Cryptography</li><li>CA -- Certified Authority</li><li>AES – Advanced Encryption Standards</li></ul></div>
+          </td>
+          <td class="custom-col">IEEE</td>
+                      <td class="custom-col"></td>
+                      <td class="custom-col">Low</td>
+                      <td class="custom-col">Draft</td>
+                      <td class="custom-col">Demonstration</td>
+                    </tr>
+        <tr>
+          <td class="id-col"><a id="20"></a>SRS-20</td>
+          <td class="custom-col">Section</td>
+                      <td class="description-col" style="padding-left:10px">
+            <h1>2 Requirements</h1>
+            <div class="htmlContent"></div>
+          </td>
+          <td class="custom-col">IEEE</td>
+                      <td class="custom-col"></td>
+                      <td class="custom-col">Medium</td>
+                      <td class="custom-col">Draft</td>
+                      <td class="custom-col">Demonstration</td>
+                    </tr>
+        <tr>
+          <td class="id-col"><a id="21"></a>SRS-21</td>
+          <td class="custom-col">Interface Requirement</td>
+                      <td class="description-col" style="padding-left:20px">
+            <h2>2.1 External interfaces</h2>
+            <div class="htmlContent"><ul><li>Operating Systems – Ubuntu 18.04 and higher</li><li>Database Used – MySQL</li><li>Modules Required – Flask’s MySQLdb, Opencv or PIL, AES, SHA</li><li>Web Based Functionality co-ordinated with Python 3 using Flask Framework</li></ul></div>
+          </td>
+          <td class="custom-col">IEEE</td>
+                      <td class="custom-col"></td>
+                      <td class="custom-col">High</td>
+                      <td class="custom-col">Draft</td>
+                      <td class="custom-col">Demonstration</td>
+                    </tr>
+        <tr>
+          <td class="id-col"><a id="22"></a>SRS-22</td>
+          <td class="custom-col">Functional Requirement</td>
+                      <td class="description-col" style="padding-left:20px">
+            <h2>2.2 Functions</h2>
+            <div class="htmlContent"><p><strong>Encryption</strong></p><ul><li>Description and Priority</li></ul><ol><li>This Feature is used by both steganography and visual cryptography.</li><li>Secret key is first to be converted into unique code using Vedic codes and visual cryptography converts image into shares.</li></ol><p><br></p><ul><li>Stimulus/Response Sequences :</li></ul><ol><li>Registration of user which generates shares</li><li>Right choice of shares to be done while making payment</li></ol><p><br></p><p><strong>Decryption</strong></p><ul><li>Description and Priority</li></ul><ol><li>This feature involves decryption algorithm using visual cryptography.</li><li>Once all the shares are combined to make one single image and then it is decrypted we get a normal image</li><li>Which is then is to be decoded to get secret key.</li><li>This secret key is then sent to bank.</li></ol><p><br></p><ul><li>Stimulus/Response Sequences:</li></ul><ol><li>Search for particular share in database.</li><li>Combining it with consumers’ Shares.</li><li>Sending the key to Bank Verification</li></ol></div>
+          </td>
+          <td class="custom-col">IEEE</td>
+                      <td class="custom-col"></td>
+                      <td class="custom-col">High</td>
+                      <td class="custom-col">Draft</td>
+                      <td class="custom-col">Demonstration</td>
+                    </tr>
+        <tr>
+          <td class="id-col"><a id="23"></a>SRS-23</td>
+          <td class="custom-col">Functional Requirement</td>
+                      <td class="description-col" style="padding-left:20px">
+            <h2>2.3 Usability requirements</h2>
+            <div class="htmlContent"><ul><li>The product must provide an user friendly bridge between merchants' website and bank database.</li><li>The number of physical interactions should be minimum.</li></ul></div>
+          </td>
+          <td class="custom-col">IEEE</td>
+                      <td class="custom-col"></td>
+                      <td class="custom-col">Low</td>
+                      <td class="custom-col">Draft</td>
+                      <td class="custom-col">Demonstration</td>
+                    </tr>
+        <tr>
+          <td class="id-col"><a id="24"></a>SRS-24</td>
+          <td class="custom-col">Functional Requirement</td>
+                      <td class="description-col" style="padding-left:20px">
+            <h2>2.4 Performance requirements</h2>
+            <div class="htmlContent"><ul><li>Availability of Proper Bandwidth.</li><li>The software should use minimum memory by optimizing the algorithms for space complexity.</li></ul></div>
+          </td>
+          <td class="custom-col">IEEE</td>
+                      <td class="custom-col"></td>
+                      <td class="custom-col">Low</td>
+                      <td class="custom-col">Draft</td>
+                      <td class="custom-col">Demonstration</td>
+                    </tr>
+        <tr>
+          <td class="id-col"><a id="25"></a>SRS-25</td>
+          <td class="custom-col">Functional Requirement</td>
+                      <td class="description-col" style="padding-left:20px">
+            <h2>2.5 Logical database requirements</h2>
+            <div class="htmlContent"><p>TBD</p></div>
+          </td>
+          <td class="custom-col">IEEE</td>
+                      <td class="custom-col"></td>
+                      <td class="custom-col">Low</td>
+                      <td class="custom-col">Draft</td>
+                      <td class="custom-col">Demonstration</td>
+                    </tr>
+        <tr>
+          <td class="id-col"><a id="26"></a>SRS-26</td>
+          <td class="custom-col">Non-func. Requirement</td>
+                      <td class="description-col" style="padding-left:20px">
+            <h2>2.6 Design constraints</h2>
+            <div class="htmlContent"><ol><li>During payment, merchant’s payment system requires to direct the shopper to CA’s portal but fraudulent merchant may direct shopper to a portal similar to CA’s portal but of its own making and get hold of customer own share.</li><li>Need to carry the secret image share to authenticate the payment process</li><li>Use of text steganography involves encoding using Vedic Codes which is indeed described for alphabets. In this case, the key which will be used by the consumer to generate shares must contain alphabets.</li></ol></div>
+          </td>
+          <td class="custom-col">IEEE</td>
+                      <td class="custom-col"></td>
+                      <td class="custom-col">High</td>
+                      <td class="custom-col">Draft</td>
+                      <td class="custom-col">Demonstration</td>
+                    </tr>
+        <tr>
+          <td class="id-col"><a id="27"></a>SRS-27</td>
+          <td class="custom-col">Information</td>
+                      <td class="description-col" style="padding-left:20px">
+            <h2>2.7 Standards compliance</h2>
+            <div class="htmlContent"><p>Rules and Regulations suggested by SSL certificates and Certified Authorities</p></div>
+          </td>
+          <td class="custom-col">IEEE</td>
+                      <td class="custom-col"></td>
+                      <td class="custom-col">Low</td>
+                      <td class="custom-col">Draft</td>
+                      <td class="custom-col">Demonstration</td>
+                    </tr>
+        <tr>
+          <td class="id-col"><a id="28"></a>SRS-28</td>
+          <td class="custom-col">Section</td>
+                      <td class="description-col" style="padding-left:20px">
+            <h2>2.8 Software system attributes</h2>
+            <div class="htmlContent"><ul><li>With increasing number of customers, Database must be flexible to grow in size.</li><li>The software will be robust, specific to particular consumer and verifiable where every entry of data in the database will be verified</li></ul></div>
+          </td>
+          <td class="custom-col">IEEE</td>
+                      <td class="custom-col"></td>
+                      <td class="custom-col"></td>
+                      <td class="custom-col">Draft</td>
+                      <td class="custom-col">Demonstration</td>
+                    </tr>
+        <tr>
+          <td class="id-col"><a id="29"></a>SRS-29</td>
+          <td class="custom-col">Section</td>
+                      <td class="description-col" style="padding-left:10px">
+            <h1>3 Verification</h1>
+            <div class="htmlContent"><ul><li>HTML Pages generating interface to consumer</li><li>Certified Authority Role which will be performed by this product</li><li>Database for certified Authority</li><li>Transaction involving interface provided by Bank</li></ul></div>
+          </td>
+          <td class="custom-col">IEEE</td>
+                      <td class="custom-col"></td>
+                      <td class="custom-col">Low</td>
+                      <td class="custom-col">Draft</td>
+                      <td class="custom-col">Demonstration</td>
+                    </tr>
+        <tr>
+          <td class="id-col"><a id="30"></a>SRS-30</td>
+          <td class="custom-col">Section</td>
+                      <td class="description-col" style="padding-left:10px">
+            <h1>4 Supporting information</h1>
+            <div class="htmlContent"><p><strong>End Users:</strong></p><ul><li>Banks: Checking the authentication and processing fund transfer to merchant</li><li>CA: Storing shares and decrypting secret image using decryption algorithm.</li><li>Consumers: Generating shares while registration and using them as secret key while payments.</li><li>Merchants: Providing Interface to build a bridge between consumer and CA</li></ul></div>
+          </td>
+          <td class="custom-col">IEEE</td>
+                      <td class="custom-col"></td>
+                      <td class="custom-col">Medium</td>
+                      <td class="custom-col">Draft</td>
+                      <td class="custom-col">Demonstration</td>
+                    </tr>
+        <tr>
+          <td class="id-col"><a id="31"></a>SRS-31</td>
+          <td class="custom-col">Section</td>
+                      <td class="description-col" style="padding-left:10px">
+            <h1>5 References</h1>
+            <div class="htmlContent"><ul><li>Souvik Roy and P. Venkateswaran, "Steganography and Visual Cryptography: Applications", 2014 IEEE Students’ Conference on Electrical, Electronics and Computer Science.</li><li>Mukta Sharma, Neha Sabharawal, " A Glance at Cryptographic Techniques used in Indian Banks".</li><li>Robert S. Pressman, ‘A Practitioner’s Approach’</li></ul></div>
+          </td>
+          <td class="custom-col">IEEE</td>
+                      <td class="custom-col"></td>
+                      <td class="custom-col">Medium</td>
+                      <td class="custom-col">Draft</td>
+                      <td class="custom-col">Demonstration</td>
+                    </tr>
+      </tbody>
+    </table>
+    <div id="footer">
+      <hr>
+      <div class="pull-right"><em>Last modified by <a href="mailto://maratheshivam8@gmail.com">Shivam Marathe, </a> on 2019-11-17 16:58</em></div>
+    </div>
+  </div>
+</body>
